@@ -1,13 +1,15 @@
 import numpy as np
-grid=[[3,0,6,4,0,0,0,7,8],
-      [0,0,4,0,1,0,9,5,0],
-      [0,0,0,0,0,0,0,0,0],
-      [0,0,9,7,0,0,0,0,0],
-      [0,7,5,0,9,0,4,8,0],
-      [0,0,0,0,0,1,5,0,0],
-      [0,0,0,0,0,0,0,0,0],
-      [0,2,7,0,4,0,3,0,0],
-      [6,3,0,0,0,2,8,0,9]]
+grid=[[0,0,0,1,0,0,0,9,7],
+      [0,0,7,5,0,4,0,6,0],
+      [3,6,0,0,0,0,0,0,4],
+      [0,9,0,0,0,0,6,0,0],
+      [4,0,0,0,2,0,0,0,5],
+      [0,0,6,0,0,0,0,8,0],
+      [8,0,0,0,0,0,0,3,9],
+      [0,5,0,9,0,8,2,0,0],
+      [6,4,0,0,0,1,0,0,0]]
+
+counter=0
 
 def possible(y,x,n):
     global grid
@@ -38,10 +40,12 @@ def solve():
                         grid[y][x] = 0
                 return
     print(np.matrix(grid))
-    print("Found Solution\n")
+    global counter
+    counter = counter +1
+    print("Found Solution #" + str(counter)+ "\n")
 
 
-print("Sudoku to Solve:")
+print("\nSudoku to Solve")
 print(np.matrix(grid))
-print("\n")
+print("\nSearching ...\n")
 solve()
