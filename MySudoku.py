@@ -1,4 +1,5 @@
 import numpy as np
+counter=0
 grid=[[0,0,0,1,0,0,0,9,7],
       [0,0,7,5,0,4,0,6,0],
       [3,6,0,0,0,0,0,0,4],
@@ -8,8 +9,6 @@ grid=[[0,0,0,1,0,0,0,9,7],
       [8,0,0,0,0,0,0,3,9],
       [0,5,0,9,0,8,2,0,0],
       [6,4,0,0,0,1,0,0,0]]
-
-counter=0
 
 def possible(y,x,n):
     global grid
@@ -44,8 +43,9 @@ def solve():
     counter = counter +1
     print("Found Solution #" + str(counter)+ "\n")
 
-
-print("\nSudoku to Solve")
+print("\nSudoku to Solve:")
 print(np.matrix(grid))
 print("\nSearching ...\n")
 solve()
+if (counter<1):
+    print("No solution found for specified sudoku.")
