@@ -1,4 +1,6 @@
 import numpy as np
+
+#Simple implementation of SUDOKU solver
 counter=0
 grid=[[0,0,0,1,0,0,0,9,7],
       [0,0,7,5,0,4,0,6,0],
